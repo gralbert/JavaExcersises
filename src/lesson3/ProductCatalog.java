@@ -9,7 +9,17 @@ public class ProductCatalog {
     public List<Product> getAllProducts(){
         return products;
     }
-    public void createProduct(Product product){
+    public void createProduct(Product product) throws ProductAlreadyExists{
+        boolean counter = true;
+        for (Product item: products){
+            if (item.getID() == product.getID()) {
+                counter = false;
+            }
+            if (counter){
+                throw new ProductAlreadyExists ("Product Already Exists!");
+            }
+
+        }
         products.add(product);
     }
 
