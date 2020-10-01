@@ -1,5 +1,7 @@
 package lesson4;
 
+import java.io.IOException;
+
 /** Интерфейс управления аккаунтами, для базы используется
  * текстовый файл в формате CSV */
 public interface MailAccountManager {
@@ -9,7 +11,7 @@ public interface MailAccountManager {
      * DuplicateAccountException
      */
     void registerNewAccount(String email, String password, Person person)
-            throws DuplicateAccountException;
+            throws DuplicateAccountException, IOException;
 
     /**
      * Метод удаляет пользователя, если логин и пароль введены
